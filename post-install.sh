@@ -3,6 +3,12 @@ echo "Mise à jour du système, et récupération des derniers paquets depuis le
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 
+# Interface et raccourcis
+echo "Affichage de la corbeille sur le Bureau"
+gsettings set org.nemo.desktop trash-icon-visible true
+nemo -q
+nemo &
+
 # Installation de paquets essentiels
 echo "Désinstallation du lecteur média Celluloid"
 sudo apt remove celluloid -y
@@ -25,3 +31,8 @@ if ! command -v libreoffice &> /dev/null; then
 else
     echo "LibreOffice est déjà installé."
 fi
+
+# Installation des polices Microsoft
+echo "Installation des polices Microsoft pour éviter les problèmes de compatibilité ..."
+sudo apt install ttf-mscorefonts-installer -y
+

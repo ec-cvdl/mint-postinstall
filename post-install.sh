@@ -9,6 +9,9 @@ gsettings set org.nemo.desktop trash-icon-visible true
 nemo -q
 nemo &
 
+echo "Affichage du dossier personnel sur le Bureau ..."
+gsettings set org.nemo.desktop home-icon-visible true
+
 # Installation de paquets essentiels
 echo "Désinstallation du lecteur média Celluloid"
 sudo apt remove celluloid -y

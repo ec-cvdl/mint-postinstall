@@ -5,12 +5,12 @@ sudo apt autoremove -y
 
 # Installation de paquets essentiels
 echo "Désinstallation du lecteur média Celluloid"
-sudo apt remove celluloid
-sudo apt purge celluloid
+sudo apt remove celluloid -y
+sudo apt purge celluloid -y
 
 # Installation de VLC Media Player
 echo "Installation de VLC Media Player à la place de Celluloid ..."
-sudo apt install vlc
+sudo apt install vlc -y
 
 # Ajout et vérification de la présence du support Flatpak
 echo "Vérification de la présence de Flatpak ..."

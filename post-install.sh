@@ -4,13 +4,13 @@ sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 
 # Interface et raccourcis
+echo "Affichage du dossier personnel sur le Bureau ..."
+gsettings set org.nemo.desktop home-icon-visible true
+
 echo "Affichage de la corbeille sur le Bureau"
 gsettings set org.nemo.desktop trash-icon-visible true
 nemo -q
 nemo &
-
-echo "Affichage du dossier personnel sur le Bureau ..."
-gsettings set org.nemo.desktop home-icon-visible true
 
 # Installation de paquets essentiels
 echo "Désinstallation du lecteur média Celluloid"

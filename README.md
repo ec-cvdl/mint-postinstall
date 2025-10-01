@@ -3,4 +3,8 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 
 Voici les étapes pour procéder à son installation :
 
-> Télécharger le fichier d'installation depuis Github :
+1. Télécharger le fichier d'installation depuis Github
+'wget https://github.com/ec-cvdl/mint-postinstall/blob/main/post-install.sh'
+2. Ouvrez "Terminal" sur l'ordinateur
+3. Tapez la commande 'cd Téléchargements'
+4. Rendez le script exécutable avec les droits adminstrateur avec ''

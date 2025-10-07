@@ -1,5 +1,5 @@
 # Mise à jour du système
-echo -e "\e[32;43mVert sur fond jaune\e[0m" "Mise à jour du système, et récupération des derniers paquets depuis les serveurs officiels ..."
+echo -e "\e[32;43mMise à jour du système, et récupération des derniers paquets depuis les serveurs officiels ...\e[0m"
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 

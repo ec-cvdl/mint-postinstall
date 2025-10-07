@@ -5,7 +5,7 @@ sudo apt autoremove -y
 
 # Interface et raccourcis
 # echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage du dossier personnel sur le Bureau ..."
-gsettings set org.nemo.desktop home-icon-visible true
+# gsettings set org.nemo.desktop home-icon-visible true
 
 echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage de la corbeille sur le Bureau"
 gsettings set org.nemo.desktop trash-icon-visible true

@@ -4,11 +4,11 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 ### Voici les étapes pour procéder à son installation :
 1. Ouvrez l'application "Terminal" sur l'ordinateur
 2. Télécharger le fichier d'installation depuis Github
-  `wget https://github.com/ec-cvdl/mint-postinstall/blob/main/post-install.sh`
+  `wget https://github.com/ec-cvdl/mint-postinstall/blob/main/mintpostinstall.sh`
 3. Tapez la commande
   `cd Téléchargements`
 4. Rendez le script exécutable avec les droits adminstrateur avec
-   `sudo chmod mintpost-install.sh`
+   `sudo chmod mintpostinstall.sh`
 5. Exécutez le script avec la commande :
   `sudo ./mintpost-install.sh`
 ### Ce que fait le script, dans l'ordre d'exécution :

@@ -19,4 +19,4 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Installe le lecteur média VLC
 - Vérifie la présence du support de Flatpak, et si non, l'installe
 - Vérifie la présence de Libre Office et si non, l'installe
-- Installe les polices Microsoft pour une meilleure compatibilité
+- Installe les polices Microsoft pour une meilleure compatibilité avec les documents texte

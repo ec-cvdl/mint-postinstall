@@ -4,7 +4,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 
 # Interface et raccourcis
-echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage du dossier personnel sur le Bureau ..."
+echo -e "\e[32;43mVert sur fond jaune\e[0m" <"Affichage du dossier personnel sur le Bureau ...">
 gsettings set org.nemo.desktop home-icon-visible true
 
 echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage de la corbeille sur le Bureau"

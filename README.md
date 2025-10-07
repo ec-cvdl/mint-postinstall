@@ -8,7 +8,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 3. Tapez la commande
   `cd Téléchargements`
 4. Rendez le script exécutable avec les droits adminstrateur avec
-   `sudo chmod mintpostinstall.sh`
+   `sudo chmod +x mintpostinstall.sh`
 5. Exécutez le script avec la commande :
   `sudo ./mintpost-install.sh`
 ### Ce que fait le script, dans l'ordre d'exécution :

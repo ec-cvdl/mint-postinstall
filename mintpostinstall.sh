@@ -4,11 +4,12 @@ sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 
 # Interface et raccourcis
-echo "\e[36mAffichage du dossier personnel sur le Bureau ..."
+echo "\e[36mAffichage du dossier personnel sur le Bureau, et des raccourcis logiciels ..."
 gsettings set org.nemo.desktop home-icon-visible true
 
 echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage de la corbeille sur le Bureau"
 gsettings set org.nemo.desktop trash-icon-visible true
+gsettings set libreoffice-startcenter.desktop true
 nemo -q
 nemo &
 

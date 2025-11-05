@@ -3,15 +3,7 @@ echo -e "\e[32;43mMise à jour du système, et récupération des derniers paque
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 
-# Interface et raccourcis
-echo "\e[36mAffichage du dossier personnel sur le Bureau, et des raccourcis logiciels ..."
-gsettings set org.nemo.desktop home-icon-visible true
 
-echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage de la corbeille sur le Bureau"
-gsettings set org.nemo.desktop trash-icon-visible true
-gsettings set libreoffice-startcenter.desktop true
-nemo -q
-nemo &
 
 # Installation de paquets essentiels
 echo "\e[36mDésinstallation du lecteur média Celluloid\e[0m"
@@ -35,6 +27,46 @@ if ! command -v libreoffice &> /dev/null; then
 else
     echo -e "\e[32;43mVert sur fond jaune\e[0m" "LibreOffice est déjà installé."
 fi
+
+# Ajout des raccourcis sur le Bureau
+echo "\e[36mAffichage du dossier personnel sur le Bureau, et des raccourcis logiciels ..."
+gsettings set org.nemo.desktop home-icon-visible true
+
+echo -e "\e[32;43mVert sur fond jaune\e[0m" "Affichage de la corbeille sur le Bureau"
+gsettings set org.nemo.desktop trash-icon-visible true
+gsettings set libreoffice-startcenter.desktop true
+gsettings set org.nemo.desktop show-home-icon true
+gsettings set org.nemo.desktop computer-icon-visible false
+
+echo "[Desktop Entry]
+Name=VLC
+Exec=vlc
+Icon=vlc
+Type=Application
+Terminal=false" > ~/Bureau/VLC.desktop
+echo "[Desktop Entry]
+Name=Gestionnaire de mise à jour
+Exec=mintupdate
+Icon=mintupdate
+Type=Application
+Terminal=false" > ~/Bureau/Mise-à-jour.desktop
+echo "[Desktop Entry]
+Name=Firefox
+Exec=firefox
+Icon=firefox
+Type=Application
+Terminal=false" > ~/Bureau/Firefox.desktop
+echo "[Desktop Entry]
+Name=LibreOffice Writer
+Exec=libreoffice --writer
+Icon=libreoffice-writer
+Type=Application
+Terminal=false" > ~/Bureau/LibreOffice-Writer.desktop
+
+# Rendre les nouveaux raccourcis exécutables
+chmod +x ~/Bureau/*.desktop
+nemo -q
+nemo &
 
 # Installation des polices Microsoft
 echo -e "\e[32;43mVert sur fond jaune\e[0m" "Installation des polices Microsoft pour éviter les problèmes de compatibilité ..."

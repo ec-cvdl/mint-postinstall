@@ -2,8 +2,6 @@
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 
-
-
 # Installation de paquets essentiels
 sudo apt remove celluloid -y
 sudo apt purge celluloid -y

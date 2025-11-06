@@ -79,4 +79,4 @@ chmod +x ~/Bureau/*.desktop
 nemo -q
 
 # Installation de polices Microsoft et codecs vidéo
-sudo apt install ubuntu-restricted-extras
+sudo apt install -y ubuntu-restricted-extras

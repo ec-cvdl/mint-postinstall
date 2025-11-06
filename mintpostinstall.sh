@@ -31,3 +31,5 @@ chmod +x ~/Bureau/*.desktop
 # Redémarrage de l'explorateur
 nemo -q
 
+# Installation de polices Microsoft et codecs vidéo
+sudo apt install ubuntu-restricted-extras

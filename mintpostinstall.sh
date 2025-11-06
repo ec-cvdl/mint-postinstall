@@ -11,7 +11,7 @@ sudo apt purge celluloid -y
 sudo apt install vlc -y
 
 # Vérification du support de Flatpak
-flatpak remote-ad --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Ajout des raccourcis sur le Bureau
 gsettings set org.nemo.desktop home-icon-visible true

@@ -17,42 +17,32 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 gsettings set org.nemo.desktop home-icon-visible true
 gsettings set org.nemo.desktop trash-icon-visible true
 
-# Test Raccourcis
-#!/bin/bash
-
-# 1. Afficher les icônes système
-gsettings set org.nemo.desktop trash-icon-visible true
-gsettings set org.nemo.desktop home-icon-visible true
-
-# 2. Créer les lanceurs personnalisés
+# Créer les lanceurs personnalisés
 BUREAU="$HOME/Bureau"
 
-# Fonction pour créer un lanceur
-creer_lanceur() {
-    local nom=$1
+# Fonction pour créer un raccourci
+create_launcher() {
+    local name=$1
     local exec=$2
-    local icone=$3
-    cat > "$BUREAU/$nom.desktop" <<EOF
+    local icon=$3
+    cat > "$BUREAU/$name.desktop" <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=$nom
+Name=$name
 Exec=$exec
-Icon=$icone
+Icon=$icon
 Terminal=false
 EOF
-    chmod +x "$BUREAU/$nom.desktop"
+    chmod +x "$BUREAU/$name.desktop"
 }
 
 # Créer les lanceurs
-creer_lanceur "LibreOffice" "libreoffice" "libreoffice"
-creer_lanceur "VLC" "vlc" "vlc"
-creer_lanceur "Firefox" "firefox" "firefox"
-creer_lanceur "Logithèque" "mintinstall" "mintinstall"
-creer_lanceur "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
-
-echo "Raccourcis configurés sur le bureau."
-
+create_launcher "LibreOffice" "libreoffice" "libreoffice"
+create_launcher "VLC" "vlc" "vlc"
+create_launcher "Firefox" "firefox" "firefox"
+ccreate_launcher "Logithèque" "mintinstall" "mintinstall"
+create_launcher "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
 
 # Rendre les raccourcis exécutables
 chmod +x ~/Bureau/*.desktop

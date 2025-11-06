@@ -45,10 +45,10 @@ EOF
 }
 
 # Créer les lanceurs
-creer_lanceur "LibreOffice Writer" "libreoffice --writer" "libreoffice-writer"
+creer_lanceur "LibreOffice" "libreoffice" "libreoffice"
 creer_lanceur "VLC" "vlc" "vlc"
 creer_lanceur "Firefox" "firefox" "firefox"
-creer_lanceur "Logithèque" "mintinstall" "software-manager"
+creer_lanceur "Logithèque" "mintinstall" "mintinstall"
 creer_lanceur "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
 
 echo "Raccourcis configurés sur le bureau."

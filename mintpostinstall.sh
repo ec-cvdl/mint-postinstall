@@ -16,61 +16,43 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Ajout des raccourcis sur le Bureau
 gsettings set org.nemo.desktop home-icon-visible true
 gsettings set org.nemo.desktop trash-icon-visible true
-# Libre Office
+
+# Test Raccourcis
+#!/bin/bash
+
+# 1. Afficher les icônes système
+gsettings set org.nemo.desktop trash-icon-visible true
+gsettings set org.nemo.desktop home-icon-visible true
+
+# 2. Créer les lanceurs personnalisés
+BUREAU="$HOME/Bureau"
+
+# Fonction pour créer un lanceur
+creer_lanceur() {
+    local nom=$1
+    local exec=$2
+    local icone=$3
+    cat > "$BUREAU/$nom.desktop" <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=LibreOffice 
-Comment=Ouvrir LibreOffice 
-Exec=libreoffice 
-Icon=libreoffice
-Path=
+Name=$nom
+Exec=$exec
+Icon=$icone
 Terminal=false
-StartupNotify=false
-# VLC
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=VLC
-Comment=Lecteur multimédia VLC
-Exec=vlc
-Icon=vlc
-Path=
-Terminal=false
-StartupNotify=false
-# Logithèque
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Logithèque
-Comment=Gestionnaire de logiciels Linux Mint
-Exec=mintinstall
-Icon=software-manager
-Path=
-Terminal=false
-StartupNotify=false
-# Gestionnaire de mise à jour
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Gestionnaire de mise à jour
-Comment=Gestionnaire de mise à jour Linux Mint
-Exec=mintupdate
-Icon=software-update-available
-Path=
-Terminal=false
-StartupNotify=false
-# Firefox
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Firefox
-Comment=Navigateur web Firefox
-Exec=firefox
-Icon=firefox
-Path=
-Terminal=false
-StartupNotify=false
+EOF
+    chmod +x "$BUREAU/$nom.desktop"
+}
+
+# Créer les lanceurs
+creer_lanceur "LibreOffice Writer" "libreoffice --writer" "libreoffice-writer"
+creer_lanceur "VLC" "vlc" "vlc"
+creer_lanceur "Firefox" "firefox" "firefox"
+creer_lanceur "Logithèque" "mintinstall" "software-manager"
+creer_lanceur "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
+
+echo "Raccourcis configurés sur le bureau."
+
 
 # Rendre les raccourcis exécutables
 chmod +x ~/Bureau/*.desktop

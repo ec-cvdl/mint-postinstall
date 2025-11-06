@@ -41,7 +41,7 @@ EOF
 create_launcher "LibreOffice" "libreoffice" "libreoffice"
 create_launcher "VLC" "vlc" "vlc"
 create_launcher "Firefox" "firefox" "firefox"
-ccreate_launcher "Logithèque" "mintinstall" "mintinstall"
+create_launcher "Logithèque" "mintinstall" "mintinstall"
 create_launcher "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
 
 # Rendre les raccourcis exécutables

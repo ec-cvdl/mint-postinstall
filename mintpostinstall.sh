@@ -4,6 +4,10 @@ sudo apt upgrade -y
 sudo apt autoremove
 
 # Masquage du boot menu GRUB
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Ce script doit être exécuté en tant que root (sudo)."
+    exit 1
+fi
 sudo -y cp /etc/default/grub /etc/default/grub.bak
 sudo -y sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo -y sed -i 's/^#GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub

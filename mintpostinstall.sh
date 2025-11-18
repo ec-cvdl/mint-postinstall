@@ -54,7 +54,7 @@ chmod +x ~/Bureau/*.desktop
 nemo -q
 
 # Installation du dictionnaire Français sous Firefox et activation
-curl -L -o /tmp/dict.xpi "https://addons.mozilla.org/firefox/downloads/file/4232546/dictionnaire_francais-1.0-fx.xpi" && \
+curl -L -o /tmp/dict.xpi "https://github.com/ec-cvdl/mint-postinstall/blob/main/dictionnaire_francais1-7.0b.xpi" && \
 sudo mkdir -p /usr/lib/firefox/distribution/extensions && \
 sudo cp /tmp/dict.xpi /usr/lib/firefox/distribution/extensions/dictionnaire-francais@mozilla.org.xpi && \
 pkill firefox && sleep 2 && firefox &

@@ -52,3 +52,6 @@ nemo -q
 
 # Installation de polices Microsoft et codecs vidéo
 sudo apt install -y ubuntu-restricted-extras
+
+# Suppression du script
+sudo rm -- "$0" -y

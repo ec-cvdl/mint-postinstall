@@ -33,4 +33,4 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Supprime le script en lui-même
 
 ## Comment savoir si le script a fonctionné ?
-Pour savoir si le script s'ext correctement exécuté 
+Pour savoir si le script s'ext correctement exécuté, vous devriez trouver, sur le bureau de l'ordinateur, plusieurs raccourcis d'aplications. De plus, une validation manuelle doit se faire à la toute fin du script, juste avant sa suppression. L'installation des polices Microsoft demande une validation au clavier (touche gauche, validez, puis validez aen sélectionnant "Oui").

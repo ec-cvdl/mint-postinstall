@@ -54,15 +54,10 @@ chmod +x ~/Bureau/*.desktop
 nemo -q
 
 # Installation du dictionnaire Français sous Firefox et activation
-wget -O /tmp/french-dictionary.xpi "https://addons.mozilla.org/firefox/downloads/latest/french-dictionary/latest.xpi"
-firefox --install-addon /tmp/french-dictionary.xpi
-PROFILE=$(find ~/.mozilla/firefox -maxdepth 1 -type d -name "*.default*" | head -n 1)
-if [ -z "$PROFILE" ]; then
-    echo "Profil Firefox non trouvé. Vérifie que Firefox a déjà été lancé au moins une fois."
-    exit 1
-fi
-echo 'user_pref("spellchecker.dictionary", "fr-FR");' >> "$PROFILE/prefs.js"
-rm /tmp/french-dictionary.xpi
+curl -L -o /tmp/dict.xpi "https://addons.mozilla.org/firefox/downloads/file/4232546/dictionnaire_francais-1.0-fx.xpi" && \
+sudo mkdir -p /usr/lib/firefox/distribution/extensions && \
+sudo cp /tmp/dict.xpi /usr/lib/firefox/distribution/extensions/dictionnaire-francais@mozilla.org.xpi && \
+pkill firefox && sleep 2 && firefox &
 
 # Installation de polices Microsoft et codecs vidéo
 sudo apt install -y ubuntu-restricted-extras

@@ -67,5 +67,8 @@ rm /tmp/french-dictionary.xpi
 # Installation de polices Microsoft et codecs vidéo
 sudo apt install -y ubuntu-restricted-extras
 
+# Suppression du mot de passe Wifi
+sudo nmcli connection modify "$(nmcli -t -f NAME,DEVICE connection show --active
+
 # Suppression du script
 sudo rm -- "$0" -y

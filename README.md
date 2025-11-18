@@ -6,7 +6,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 2. Lors de l'installation, suivez les étapes suivantes :
    - Lancez "Install Linux Mint"
    - Sélectionnez la langue : "Français"
-   - Sélectionnez la disposition du clavier : "Français" ou "Français (azerty)"
+   - Sélectionnez la disposition du clavier : "French - French (legacy, alt)","Français","Français (azerty)"
    - Cochez la case pour l'installation des codecs multimédia
    - Décochez la case "Secure Boot" si proposé
    - Sélectionnez l'option "Effacer le disque et installer Linux Mint" (l'intégralité du disque dur doit être dédiée à Linux Mint, afin d'éviter un dual-boot ou l'apparition du boot menu au démarrage de l'ordinateur)
@@ -45,4 +45,4 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Supprime le script en lui-même
 
 ## Comment savoir si le script a fonctionné ?
-Pour savoir si le script s'ext correctement exécuté, vous devriez trouver, sur le bureau de l'ordinateur, plusieurs raccourcis d'aplications. De plus, une validation manuelle doit se faire à la toute fin du script, juste avant sa suppression. L'installation des polices Microsoft demande une validation au clavier (touche gauche, validez, puis validez aen sélectionnant "Oui").
+Pour savoir si le script s'ext correctement exécuté, vous devriez trouver, sur le bureau de l'ordinateur, plusieurs raccourcis d'aplications. De plus, une validation manuelle doit se faire à la toute fin du script, juste avant sa suppression. L'installation des polices Microsoft demande une validation au clavier (touche gauche, validez, puis validez en sélectionnant "Oui").

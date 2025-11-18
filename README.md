@@ -1,6 +1,18 @@
 # mint-postinstall
 Un script dédié à l'installation et le paramétrage des machines sous Linux Mint auprès des reconditionneurs d'Emmaus Connect en Centre Val-de-Loire. Ce script peut être utilisé par d'autres régions, dupliqué, commenté et modifié au besoin.
 
+## Pré-requis lors de l'installation de Linux Mint 22.2 (Zara) :
+1. Téléchargez la dernière version officielle de Linux Mint 22.2 (Zara) via [ce lien](https://www.linuxmint.com/edition.php?id=322)
+2. Lors de l'installation, suivez les étapes suivantes :
+   - Lancez "Install Linux Mint"
+   - Sélectionnez la langue : "Français"
+   - Sélectionnez la disposition du clavier : "Français" ou "Français (azerty)"
+   - Cochez la case pour l'installation des codecs multimédia
+   - Décochez la case "Secure Boot" si proposé
+   - Sélectionnez l'option "Effacer le disque et installer Linux Mint" (l'intégralité du disque dur doit être dédiée à Linux Mint, afin d'éviter un dual-boot ou l'apparition du boot menu au démarrage de l'ordinateur)
+   - Sélectionner la zone géographique : "Paris"
+   - Entrez les informations du compte : Le nom -> "Utilisateur" ; Mot de passe : "emmaus"
+
 ### Première méthode pour l'installation :
 1. Téléchargez le script via [ce lien](https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/mintpostinstall.sh) (Clic droit sur le lien, puis "Enregistrer le cible du lien sous"), ou vous pouvez directement télécharger le fichier sur [cette page](https://github.com/ec-cvdl/mint-postinstall/blob/main/mintpostinstall.sh), en cliquant sur l'icône de téléchargement.
 2. Ouvrez le dossier du script (en général, dans le dossier "Téléchargements"

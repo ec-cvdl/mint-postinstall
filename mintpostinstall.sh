@@ -50,8 +50,15 @@ chmod +x ~/Bureau/*.desktop
 # Redémarrage de l'explorateur
 nemo -q
 
+# Installation du dictionnaire Français sous Firefox et activation
+wget -O /tmp/fr-FR.xpi "wget -O /tmp/fr-FR.xpi "https://addons.mozilla.org/firefox/downloads/latest/french-dictionary/latest.xpi""
+echo 'user_pref("spellchecker.dictionary", "fr-FR");' >> "$PROFILE/prefs.js"
+rm /tmp/french-dictionary.xpi
+
 # Installation de polices Microsoft et codecs vidéo
 sudo apt install -y ubuntu-restricted-extras
+firefox --install-addon /tmp/french-dictionnary.xpi
+
 
 # Suppression du script
 sudo rm -- "$0" -y

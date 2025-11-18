@@ -3,6 +3,20 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove
 
+# Suppression de l'application Terminal de la barre des tâches
+CURRENT=$(gsettings get org.cinnamon panel-launchers)
+IFS=',' read -ra ITEMS <<< "$(echo "$CURRENT" | tr -d '[]' | tr -d "'")"
+NEW_LIST="["
+for ITEM in "${ITEMS[@]}"; do
+    # Supprimer les espaces éventuels autour
+    ITEM=$(echo "$ITEM" | xargs)
+    if [[ "$ITEM" != "gnome-terminal.desktop" ]]; then
+       NEW_LIST+="'$ITEM', "
+  fi
+done
+NEW_LIST="${NEW_LIST%, }]"
+gsettings set org.cinnamon panel-launchers "$NEW_LIST"
+
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y
 sudo apt purge celluloid -y

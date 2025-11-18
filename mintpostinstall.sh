@@ -3,6 +3,12 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove
 
+# Masquage du boot menu GRUB
+cp /etc/default/grub /etc/default/grub.bak
+sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+sed -i 's/^#GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub
+update-grub
+
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y
 sudo apt purge celluloid -y

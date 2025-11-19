@@ -65,8 +65,12 @@ firefox & sleep 3 && pkill -f firefox
 # Installation de polices Microsoft et codecs vidéo
 sudo apt install -y ubuntu-restricted-extras
 
-# Suppression du mot de passe Wifi
-sudo nmcli connection modify "$(nmcli -t -f NAME,DEVICE connection show --active
+# Suppression de tous les mots de passe Wi-Fi enregistrés
+for conn in $(nmcli -t -f NAME,TYPE connection show | grep wifi | cut -d: -f1); do
+    sudo nmcli connection modify "$conn" wifi-security.psk ""
+    sudo nmcli connection modify "$conn" 802-11-wireless-security.psk ""
+done
+sudo nmcli connection reload
 
 # Suppression du script
 echo "L'installation s'est déroulée avec succès, appuyez sur la touche Entrée pour terminer l'installation ..."

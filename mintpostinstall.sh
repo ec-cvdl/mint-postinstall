@@ -69,4 +69,4 @@ sudo apt install -y ubuntu-restricted-extras
 sudo nmcli connection modify "$(nmcli -t -f NAME,DEVICE connection show --active
 
 # Suppression du script
-sudo rm -- "$0"
+echo "L'installation s'est déroulée avec succès, appuyez sur la touche Entrée pour terminer l'installation ..." && read -r && rm -- "$0"

@@ -53,11 +53,14 @@ chmod +x ~/Bureau/*.desktop
 # Redémarrage de l'explorateur
 nemo -q
 
+# Création du dossier .mozzila dans le dossier personnel
+firefox & sleep 3 && pkill -f firefox
+
 # Installation du dictionnaire Français sous Firefox et activation
-curl -L -o /tmp/dict.xpi "https://github.com/ec-cvdl/mint-postinstall/blob/main/dictionnaire_francais1-7.0b.xpi" && \
-sudo mkdir -p /usr/lib/firefox/distribution/extensions && \
-sudo cp /tmp/dict.xpi /usr/lib/firefox/distribution/extensions/dictionnaire-francais@mozilla.org.xpi && \
-pkill firefox && sleep 2 && firefox &
+# curl -L -o /tmp/dict.xpi "https://github.com/ec-cvdl/mint-postinstall/blob/main/dictionnaire_francais1-7.0b.xpi" && \
+# sudo mkdir -p /usr/lib/firefox/distribution/extensions && \
+# sudo cp /tmp/dict.xpi /usr/lib/firefox/distribution/extensions/dictionnaire-francais@mozilla.org.xpi && \
+# pkill firefox && sleep 2 && firefox &
 
 # Installation de polices Microsoft et codecs vidéo
 sudo apt install -y ubuntu-restricted-extras
@@ -66,4 +69,4 @@ sudo apt install -y ubuntu-restricted-extras
 sudo nmcli connection modify "$(nmcli -t -f NAME,DEVICE connection show --active
 
 # Suppression du script
-sudo rm -- "$0" -y
+sudo rm -- "$0"

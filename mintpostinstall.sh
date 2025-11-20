@@ -58,7 +58,7 @@ firefox & sleep 3 && pkill -f firefox
 
 # Installation du dictionnaire Français sous Firefox et activation
 wget https://github.com/ec-cvdl/mint-postinstall/raw/refs/heads/main/fr-dicollecte@dictionaries.addons.mozilla.org.xpi
-sudo mv "fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions
+sudo mv "/home/utilisateur/Téléchargements/fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions
 
 # curl -L -o /tmp/dict.xpi "https://github.com/ec-cvdl/mint-postinstall/blob/main/dictionnaire_francais1-7.0b.xpi" && \
 # sudo mkdir -p /usr/lib/firefox/distribution/extensions && \

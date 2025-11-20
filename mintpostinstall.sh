@@ -61,6 +61,18 @@ wget https://github.com/ec-cvdl/mint-postinstall/raw/refs/heads/main/fr-dicollec
 sudo mv "/home/utilisateur/Téléchargements/fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions
 sudo mv "/home/user/Téléchargements/fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions
 sudo mv "/home/admin/Téléchargements/fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions
+sudo mkdir -p /usr/lib/firefox/distribution
+sudo tee /usr/lib/firefox/distribution/policies.json > /dev/null <<'JSON'
+{
+  "policies": {
+    "Extensions": {
+      "Install": [
+        "file:///usr/local/share/firefox/extensions/fr-dicollecte@dictionaries.addons.mozilla.org.xpi"
+      ]
+    }
+  }
+}
+JSON
 pkill -f firefox || true
 firefox --headless &
 sleep 5

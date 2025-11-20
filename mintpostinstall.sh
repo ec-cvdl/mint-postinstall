@@ -76,11 +76,10 @@ for conn in $(nmcli -t -f NAME,TYPE connection show | grep wifi | cut -d: -f1); 
 done
 sudo nmcli connection reload
 
-# Réaffichage du message de bienvenue de Linux Mint et du Gestionnaire de mise à jour au prochain démarrage
+# Réaffichage du message de bienvenue de Linux Mint
 sudo rm -rf /home/utilisateur/.linuxmint
 sudo rm -rf /home/user/.linuxmint
 sudo rm -rf /home/admin/.linuxmint
-mkdir -p ~/.config/linuxmint/mintupdate && > ~/.config/linuxmint/mintupdate/last_update_check
 
 # Suppression du script
 echo "L'installation s'est déroulée avec succès, appuyez sur la touche Entrée pour terminer l'installation ..."

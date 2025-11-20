@@ -76,9 +76,14 @@ for conn in $(nmcli -t -f NAME,TYPE connection show | grep wifi | cut -d: -f1); 
 done
 sudo nmcli connection reload
 
+# Réaffichage du message de bienvenue de Linux Mint au prochain démarrage
+sudo rm -rf /home/utilisateur/.linuxmint
+sudo rm -rf /home/user/.linuxmint
+sudo rm -rf /home/admin/.linuxmint
+
 # Suppression du script
 echo "L'installation s'est déroulée avec succès, appuyez sur la touche Entrée pour terminer l'installation ..."
 read
 
 SCRIPT_PATH="$(realpath "$0")"
-rm -- "$SCRIPT_PATH"
+rm -i -- "$SCRIPT_PATH"

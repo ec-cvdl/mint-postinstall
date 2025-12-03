@@ -84,9 +84,9 @@ sudo rm -rf /home/utilisateur/.linuxmint
 sudo rm -rf /home/user/.linuxmint
 sudo rm -rf /home/admin/.linuxmint
 
-# Suppression du script
-echo "L'installation s'est déroulée avec succès, appuyez sur la touche Entrée pour terminer l'installation ..."
-read
+# Ouverture de Firefox pour l'activation du l'activation du dictionnaire
+firefox https://addons.mozilla.org/fr/firefox/addon/dictionnaire-fran%C3%A7ais1/
 
+# Suppression du script
 SCRIPT_PATH="$(realpath "$0")"
-rm -i -- "$SCRIPT_PATH"
+rm -- "$SCRIPT_PATH"

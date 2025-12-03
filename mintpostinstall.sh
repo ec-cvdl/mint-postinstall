@@ -70,7 +70,8 @@ sleep 5
 pkill -f firefox
 
 # Installation de polices Microsoft et codecs vidéo
-sudo apt install -y ubuntu-restricted-extras
+echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+sudo DEBIAN_FRONTEND=noninteractive apt install -y ubuntu-restricted-extras
 
 # Suppression de tous les mots de passe Wi-Fi enregistrés
 for conn in $(nmcli -t -f NAME,TYPE connection show | grep wifi | cut -d: -f1); do

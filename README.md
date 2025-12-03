@@ -45,4 +45,4 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Supprime le script en lui-même
 
 ## Comment savoir si le script a fonctionné ?
-Pour savoir si le script s'ext correctement exécuté, vous devriez trouver, sur le bureau de l'ordinateur, plusieurs raccourcis d'aplications. De plus, une validation manuelle doit se faire à la toute fin du script, juste avant sa suppression. L'installation des polices Microsoft demande une validation au clavier (touche gauche, validez, puis validez en sélectionnant "Oui").
+Pour savoir si le script s'ext correctement exécuté, vous devriez trouver, sur le bureau de l'ordinateur, plusieurs raccourcis d'aplications. De plus, une validation manuelle doit se faire à la toute fin du script, juste avant sa suppression. Vous devrez activer le plugin affiché à l'écran. Une fois réalisé, vous n'aurez plus qu'à fermer la fenêtre de Firefox pour confirmer la fin de l'installation, ainsi que la suppression du script sur l'ordinateur.

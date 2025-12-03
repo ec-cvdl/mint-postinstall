@@ -12,6 +12,9 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
    - Sélectionnez l'option "Effacer le disque et installer Linux Mint" (l'intégralité du disque dur doit être dédiée à Linux Mint, afin d'éviter un dual-boot ou l'apparition du boot menu au démarrage de l'ordinateur)
    - Sélectionner la zone géographique : "Paris"
    - Entrez les informations du compte : Le nom -> "Utilisateur" ; Mot de passe : "emmaus"
+   - Une fois le système installé, fermez la fenêtre de premier lancement de Linux Mint
+   - Désépinglez le terminal de la barre des tâches (automatisé dans une future mise à jour)
+   - Suivez l'une des méthodes d'installation ci-dessous
 
 ### Première méthode pour l'installation :
 1. Téléchargez le script via [ce lien](https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/mintpostinstall.sh) (Clic droit sur le lien, puis "Enregistrer le cible du lien sous"), ou vous pouvez directement télécharger le fichier sur [cette page](https://github.com/ec-cvdl/mint-postinstall/blob/main/mintpostinstall.sh), en cliquant sur l'icône de téléchargement.

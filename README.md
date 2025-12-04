@@ -10,9 +10,9 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
    - Cochez la case pour l'installation des codecs multimédia
    - Décochez la case "Secure Boot" si proposé
    - Sélectionnez l'option "Effacer le disque et installer Linux Mint" (l'intégralité du disque dur doit être dédiée à Linux Mint, afin d'éviter un dual-boot ou l'apparition du boot menu au démarrage de l'ordinateur)
-   - Sélectionner la zone géographique : "Paris"
+   - Sélectionnez la zone géographique : "Paris"
    - Entrez les informations du compte : Le nom -> "Utilisateur" ; Mot de passe : "emmaus"
-   - Une fois le système installé, fermez la fenêtre de premier lancement de Linux Mint
+   - Une fois le système installé, et l'ordinateur redémarré une première fois, fermez la fenêtre de premier lancement de Linux Mint
    - Désépinglez le terminal de la barre des tâches (automatisé dans une future mise à jour)
    - Suivez l'une des méthodes d'installation ci-dessous
 
@@ -43,9 +43,8 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Génère des raccourcis sur le bureau
 - Installe les polices Microsoft pour une meilleure compatibilité avec les documents texte
 - Installe des codecs vidéo
-- Installer le dictionnaire orthographique Français sous Firefox et l'active
-- Supprime toutes les connexions réseau
-- Supprime le script en lui-même
+- Installe le dictionnaire orthographique Français sous Firefox et l'active (action manuelle)
+- Supprime le script en lui-même une fois la fenêtre de Firefox fermée
 
 ## Comment savoir si le script a fonctionné ?
 Pour savoir si le script s'ext correctement exécuté, vous devriez trouver, sur le bureau de l'ordinateur, plusieurs raccourcis d'aplications. De plus, une validation manuelle doit se faire à la toute fin du script, juste avant sa suppression. Vous devrez activer le plugin affiché à l'écran. Une fois réalisé, vous n'aurez plus qu'à fermer la fenêtre de Firefox pour confirmer la fin de l'installation, ainsi que la suppression du script sur l'ordinateur.

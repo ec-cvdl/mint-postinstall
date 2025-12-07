@@ -88,6 +88,11 @@ sudo rm -rf /home/admin/.linuxmint
 # Ouverture de Firefox pour l'activation du l'activation du dictionnaire
 firefox https://addons.mozilla.org/fr/firefox/addon/dictionnaire-fran%C3%A7ais1/
 
+# Supression de l'historique et du cache de Firefox
+sqlite3 ~/.mozilla/firefox/*.default-release/places.sqlite "DELETE FROM moz_places;"
+rm -rf ~/.mozilla/firefox/*.default-release/cookies.sqlite
+rm -rf ~/.mozilla/firefox/*.default-release/cache2/
+
 # Suppression du script
 SCRIPT_PATH="$(realpath "$0")"
 rm -- "$SCRIPT_PATH"

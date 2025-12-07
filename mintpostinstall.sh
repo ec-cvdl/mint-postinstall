@@ -73,13 +73,6 @@ pkill -f firefox
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive apt install -y ubuntu-restricted-extras
 
-# Suppression de tous les mots de passe Wi-Fi enregistrés
-for conn in $(nmcli -t -f NAME,TYPE connection show | grep wifi | cut -d: -f1); do
-    sudo nmcli connection modify "$conn" wifi-security.psk ""
-    sudo nmcli connection modify "$conn" 802-11-wireless-security.psk ""
-done
-sudo nmcli connection reload
-
 # Réaffichage du message de bienvenue de Linux Mint
 sudo rm -rf /home/utilisateur/.linuxmint
 sudo rm -rf /home/user/.linuxmint
@@ -92,6 +85,10 @@ firefox https://addons.mozilla.org/fr/firefox/addon/dictionnaire-fran%C3%A7ais1/
 rm -rf ~/.mozilla/firefox/*.default-release/places.sqlite
 rm -rf ~/.mozilla/firefox/*.default-release/cookies.sqlite
 rm -rf ~/.mozilla/firefox/*.default-release/cache2/
+
+# Suppression de tous les mots de passe Wi-Fi enregistrés
+sudo rm /etc/NetworkManager/system-connections/*.nmconnection
+sudo systemctl restart NetworkManager
 
 # Suppression du script
 SCRIPT_PATH="$(realpath "$0")"

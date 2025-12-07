@@ -7,11 +7,11 @@ sudo apt upgrade -y
 sudo apt autoremove
 
 # Suppression de l'application Terminal de la barre des tâches
-sudo rm -rf ~/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json
-wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/2.json
-sudo mv "/home/utilisateur/Téléchargements/2.json" ~/.config/cinnamon/spices/grouped-window-list@cinnamon.org
-sudo mv "/home/user/Téléchargements/2.json" ~/.config/cinnamon/spices/grouped-window-list@cinnamon.org
-nohup cinnamon --replace >/dev/null 2>&1 &
+# sudo rm -rf ~/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json
+# wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/2.json
+# sudo mv "/home/utilisateur/Téléchargements/2.json" ~/.config/cinnamon/spices/grouped-window-list@cinnamon.org
+# sudo mv "/home/user/Téléchargements/2.json" ~/.config/cinnamon/spices/grouped-window-list@cinnamon.org
+# nohup cinnamon --replace >/dev/null 2>&1 &
 
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y

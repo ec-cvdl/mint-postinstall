@@ -97,8 +97,8 @@ rm -rf ~/.mozilla/firefox/*.default-release/cookies.sqlite
 rm -rf ~/.mozilla/firefox/*.default-release/cache2/
 
 # Suppression de tous les mots de passe Wi-Fi enregistrés
-sudo rm /etc/NetworkManager/system-connections/*.nmconnection
-sudo systemctl restart NetworkManager
+sudo nmcli connection show | grep wifi | awk '{print $1}' | xargs -I {} nmcli connection delete {}
+sudo wpa_cli list_networks | awk 'NR>1 {print $1}' | xargs -I {} sudo wpa_cli remove_network {}
 
 # Suppression du script
 SCRIPT_PATH="$(realpath "$0")"

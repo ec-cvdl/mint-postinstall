@@ -1,9 +1,6 @@
 # Fermeture de Mint-Update
 pkill mintUpdate
 
-# Ouverture de la Logithèque pour charger le cache
-mintinstall & sleep 30 && pkill -f mintinstall
-
 # Mise à jour du système
 sudo apt update
 sudo apt upgrade -y
@@ -28,6 +25,9 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # Installation de RustDesk via Flatpak
 flatpak install rustdesk -y
+
+# Ouverture de la Logithèque pour charger le cache
+mintinstall & sleep 20 && pkill -f mintinstall
 
 # Ajout des raccourcis sur le Bureau
 gsettings set org.nemo.desktop home-icon-visible true

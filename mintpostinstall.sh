@@ -1,6 +1,9 @@
 # Fermeture de Mint-Update
 pkill mintUpdate
 
+# Ouverture de la Logithèque pour charger le cache
+mintinstall & sleep 30 && pkill -f mintinstall
+
 # Mise à jour du système
 sudo apt update
 sudo apt upgrade -y
@@ -22,6 +25,9 @@ sudo apt install vlc -y
 
 # Vérification du support de Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Installation de RustDesk via Flatpak
+flatpak install rustdesk -y
 
 # Ajout des raccourcis sur le Bureau
 gsettings set org.nemo.desktop home-icon-visible true
@@ -63,7 +69,7 @@ nemo -q
 # Création du dossier .mozzila dans le dossier personnel
 firefox & sleep 3 && pkill -f firefox
 
-# Installation du dictionnaire Français sous Firefox et activation
+# Installation du dictionnaire Français sous Firefox
 wget https://github.com/ec-cvdl/mint-postinstall/raw/refs/heads/main/fr-dicollecte@dictionaries.addons.mozilla.org.xpi
 sudo mv "/home/utilisateur/Téléchargements/fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions
 sudo mv "/home/user/Téléchargements/fr-dicollecte@dictionaries.addons.mozilla.org.xpi" ~/.mozilla/firefox/*.default-release/extensions

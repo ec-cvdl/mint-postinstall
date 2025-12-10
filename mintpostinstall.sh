@@ -26,7 +26,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak install rustdesk -y
 
 # Ouverture de la Logithèque pour charger le cache
-mintinstall & sleep 20 && pkill -f mintinstall
+mintinstall & sleep 30 && pkill -f mintinstall
 
 # Ajout des raccourcis sur le Bureau
 gsettings set org.nemo.desktop home-icon-visible true

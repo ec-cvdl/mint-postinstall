@@ -48,7 +48,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Installe des codecs vidéo
 - Installe le dictionnaire orthographique Français sous Firefox et l'active (action manuelle)
 - Supprime l'historique, ainsi que le cache de Firefox
-- Supprimer les mots de passe WiFi enregistrés
+~~- Supprimer les mots de passe WiFi enregistrés~~
 - Supprime le script en lui-même une fois la fenêtre de Firefox fermée
 
 ## Comment savoir si le script a fonctionné ?

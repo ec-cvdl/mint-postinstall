@@ -7,59 +7,73 @@ sudo apt upgrade -y
 sudo apt autoremove
 
 # Suppression de l'application Terminal de la barre des tâches
-# 1. D'abord, ajoutons temporairement le terminal au fichier JSON pour voir si ça change quelque chose
+#!/bin/bash
+
+# Script de post-installation pour désépingler le terminal
+CONFIG_FILE="$HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json"
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "✗ Fichier de configuration non trouvé : $CONFIG_FILE"
+    exit 1
+fi
+
+BACKUP_FILE="${CONFIG_FILE}.backup-$(date +%Y%m%d_%H%M%S)"
+cp "$CONFIG_FILE" "$BACKUP_FILE"
 python3 << 'EOF'
 import json
 import os
 
-config_file = os.path.expanduser("~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json")
+config_file = os.path.expanduser("~/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json")
 
-with open(config_file, 'r') as f:
-    data = json.load(f)
-
-# Afficher ce qu'il y a actuellement
-print("Contenu actuel de pinned-apps:", data.get('pinned-apps', {}).get('value', []))
-
-# Ajouter explicitement le terminal
-if 'pinned-apps' in data:
-    data['pinned-apps']['value'] = ["nemo.desktop", "firefox.desktop", "gnome-terminal.desktop"]
+try:
+    with open(config_file, 'r') as f:
+        data = json.load(f)
     
-with open(config_file, 'w') as f:
-    json.dump(data, f, indent=4)
+    print(f"  Contenu actuel de pinned-apps:")
+    if 'pinned-apps' in data:
+        print(f"    value: {data['pinned-apps'].get('value', [])}")
+        print(f"    default: {data['pinned-apps'].get('default', [])}")
     
-print("Terminal AJOUTÉ temporairement")
+    # Retirer le terminal de 'value'
+    if 'pinned-apps' in data and 'value' in data['pinned-apps']:
+        original = data['pinned-apps']['value']
+        filtered = [app for app in original if app not in ['gnome-terminal.desktop', 'org.gnome.Terminal.desktop']]
+        data['pinned-apps']['value'] = filtered
+        print(f"\n  Nouveau value: {filtered}")
+    
+    # Retirer le terminal de 'default'
+    if 'pinned-apps' in data and 'default' in data['pinned-apps']:
+        original_default = data['pinned-apps']['default']
+        filtered_default = [app for app in original_default if app not in ['gnome-terminal.desktop', 'org.gnome.Terminal.desktop']]
+        data['pinned-apps']['default'] = filtered_default
+        print(f"  Nouveau default: {filtered_default}")
+    
+    with open(config_file, 'w') as f:
+        json.dump(data, f, indent=4)
+    
+    print("\n✓ Fichier modifié avec succès")
+    
+except Exception as e:
+    print(f"\n✗ Erreur : {e}")
+    exit(1)
 EOF
 
-# 2. Recharger l'applet
-dbus-send --session --dest=org.Cinnamon.LookingGlass --type=method_call /org/Cinnamon/LookingGlass org.Cinnamon.LookingGlass.ReloadExtension string:'grouped-window-list@cinnamon.org' string:'APPLET'
+if [ $? -ne 0 ]; then
+    echo "✗ Erreur lors de la modification"
+    exit 1
+fi
+sudo sed -i 's/"default": \["nemo.desktop", "firefox.desktop", "org.gnome.Terminal.desktop"\]/"default": ["nemo.desktop", "firefox.desktop"]/' /usr/share/cinnamon/applets/grouped-window-list@cinnamon.org/settings-schema.json 2>/dev/null
 
-sleep 2
-echo "Vérifiez si quelque chose a changé (3 icônes épinglées maintenant ?)"
-read -p "Appuyez sur Entrée pour continuer..."
+dbus-send --session --dest=org.Cinnamon.LookingGlass --type=method_call \
+    /org/Cinnamon/LookingGlass org.Cinnamon.LookingGlass.ReloadExtension \
+    string:'grouped-window-list@cinnamon.org' string:'APPLET' 2>/dev/null
 
-# 3. Maintenant RETIRER le terminal
-python3 << 'EOF'
-import json
-import os
+if [ $? -ne 0 ]; then
+    killall -9 cinnamon 2>/dev/null
+    sleep 2
+    cinnamon &
+    sleep 3
+fi
 
-config_file = os.path.expanduser("~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json")
-
-with open(config_file, 'r') as f:
-    data = json.load(f)
-
-if 'pinned-apps' in data:
-    data['pinned-apps']['value'] = ["nemo.desktop", "firefox.desktop"]
-    
-with open(config_file, 'w') as f:
-    json.dump(data, f, indent=4)
-    
-print("Terminal RETIRÉ")
-EOF
-
-# 4. Recharger à nouveau
-dbus-send --session --dest=org.Cinnamon.LookingGlass --type=method_call /org/Cinnamon/LookingGlass org.Cinnamon.LookingGlass.ReloadExtension string:'grouped-window-list@cinnamon.org' string:'APPLET'
-
-echo "✓ Terminé"
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y
 sudo apt purge celluloid -y

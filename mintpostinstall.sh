@@ -157,10 +157,46 @@ rm -rf ~/.mozilla/firefox/*.default-release/cookies.sqlite
 rm -rf ~/.mozilla/firefox/*.default-release/cache2/
 
 # Suppression de tous les mots de passe Wi-Fi enregistrés
-sudo nmcli connection show | grep wifi | awk '{print $1}' | xargs -I {} nmcli connection delete {}
-sudo wpa_cli list_networks | awk 'NR>1 {print $1}' | xargs -I {} sudo wpa_cli remove_network {}
-sudo rm /etc/NetworkManager/system-connections/*
-sudo rm /etc/wpa_supplicant/wpa_supplicant.conf
+WIFI_DIR="/etc/NetworkManager/system-connections"
+
+if [ ! -d "$WIFI_DIR" ]; then
+    echo "✗ Dossier des connexions réseau non trouvé"
+    exit 1
+fi
+
+# Lister les connexions WiFi
+echo "Connexions WiFi trouvées :"
+sudo ls -1 "$WIFI_DIR"
+echo ""
+
+# Compter les fichiers
+WIFI_COUNT=$(sudo ls -1 "$WIFI_DIR" 2>/dev/null | wc -l)
+
+if [ "$WIFI_COUNT" -eq 0 ]; then
+    echo "ℹ Aucune connexion WiFi enregistrée"
+    exit 0
+fi
+
+echo "Suppression de $WIFI_COUNT connexion(s)..."
+
+# Supprimer tous les fichiers de connexion
+sudo rm -f "$WIFI_DIR"/*
+
+if [ $? -eq 0 ]; then
+    echo "✓ Toutes les connexions WiFi ont été supprimées"
+    
+    # Redémarrer NetworkManager pour appliquer les changements
+    echo ""
+    echo "Redémarrage de NetworkManager..."
+    sudo systemctl restart NetworkManager
+    
+    echo "✓ NetworkManager redémarré"
+    echo ""
+    echo "Les mots de passe WiFi ont été effacés avec succès !"
+else
+    echo "✗ Erreur lors de la suppression"
+    exit 1
+fi
 
 # Suppression du script
 SCRIPT_PATH="$(realpath "$0")"

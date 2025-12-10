@@ -7,8 +7,59 @@ sudo apt upgrade -y
 sudo apt autoremove
 
 # Suppression de l'application Terminal de la barre des tâches
-gsettings set org.cinnamon favorite-apps "$(gsettings get org.cinnamon favorite-apps | sed "s/'gnome-terminal.desktop', //g; s/, 'gnome-terminal.desktop'//g; s/'gnome-terminal.desktop'//g" | sed 's/, ,/,/g; s/\[, /\[/g; s/, \]/\]/g')"
+# 1. D'abord, ajoutons temporairement le terminal au fichier JSON pour voir si ça change quelque chose
+python3 << 'EOF'
+import json
+import os
 
+config_file = os.path.expanduser("~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json")
+
+with open(config_file, 'r') as f:
+    data = json.load(f)
+
+# Afficher ce qu'il y a actuellement
+print("Contenu actuel de pinned-apps:", data.get('pinned-apps', {}).get('value', []))
+
+# Ajouter explicitement le terminal
+if 'pinned-apps' in data:
+    data['pinned-apps']['value'] = ["nemo.desktop", "firefox.desktop", "gnome-terminal.desktop"]
+    
+with open(config_file, 'w') as f:
+    json.dump(data, f, indent=4)
+    
+print("Terminal AJOUTÉ temporairement")
+EOF
+
+# 2. Recharger l'applet
+dbus-send --session --dest=org.Cinnamon.LookingGlass --type=method_call /org/Cinnamon/LookingGlass org.Cinnamon.LookingGlass.ReloadExtension string:'grouped-window-list@cinnamon.org' string:'APPLET'
+
+sleep 2
+echo "Vérifiez si quelque chose a changé (3 icônes épinglées maintenant ?)"
+read -p "Appuyez sur Entrée pour continuer..."
+
+# 3. Maintenant RETIRER le terminal
+python3 << 'EOF'
+import json
+import os
+
+config_file = os.path.expanduser("~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json")
+
+with open(config_file, 'r') as f:
+    data = json.load(f)
+
+if 'pinned-apps' in data:
+    data['pinned-apps']['value'] = ["nemo.desktop", "firefox.desktop"]
+    
+with open(config_file, 'w') as f:
+    json.dump(data, f, indent=4)
+    
+print("Terminal RETIRÉ")
+EOF
+
+# 4. Recharger à nouveau
+dbus-send --session --dest=org.Cinnamon.LookingGlass --type=method_call /org/Cinnamon/LookingGlass org.Cinnamon.LookingGlass.ReloadExtension string:'grouped-window-list@cinnamon.org' string:'APPLET'
+
+echo "✓ Terminé"
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y
 sudo apt purge celluloid -y

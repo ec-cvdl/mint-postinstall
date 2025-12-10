@@ -1,19 +1,32 @@
-# Chercher TOUTES les occurrences de gnome-terminal dans les configs Cinnamon
-echo "=== Recherche dans dconf ==="
-dconf dump /org/cinnamon/ | grep -i "terminal"
+# 1. Vérifier le contenu actuel de votre 2.json
+cat ~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json | grep -A3 "pinned-apps"
 
-echo ""
-echo "=== Recherche dans les fichiers de config ==="
-grep -r "gnome-terminal" ~/.cinnamon/ 2>/dev/null
+# 2. Forcer la réécriture avec les bonnes valeurs
+python3 << 'EOF'
+import json
+import os
 
-echo ""
-echo "=== Recherche dans gsettings ==="
-gsettings list-recursively org.cinnamon | grep -i terminal
+config_file = os.path.expanduser("~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json")
 
-echo ""
-echo "=== Vérifier les paramètres du panel ==="
-dconf read /org/cinnamon/panels/panel1/applets
+with open(config_file, 'r') as f:
+    data = json.load(f)
 
-echo ""
-echo "=== Contenu actuel du 2.json ==="
-cat ~/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json | grep -A2 -B2 "pinned"
+# Forcer explicitement la valeur
+data['pinned-apps'] = {
+    "type": "generic",
+    "default": ["nemo.desktop", "firefox.desktop", "org.gnome.Terminal.desktop"],
+    "value": ["nemo.desktop", "firefox.desktop"]
+}
+
+with open(config_file, 'w') as f:
+    json.dump(data, f, indent=4)
+
+print("Configuration forcée")
+EOF
+
+# 3. Supprimer le cache de Cinnamon
+rm -rf ~/.cinnamon/configs.bak
+rm -rf /tmp/cinnamon-*
+
+# 4. Redémarrer Cinnamon COMPLÈTEMENT
+cinnamon --replace &

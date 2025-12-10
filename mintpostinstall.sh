@@ -7,21 +7,7 @@ sudo apt upgrade -y
 sudo apt autoremove
 
 # Suppression de l'application Terminal de la barre des tâches
-CONFIG_FILE="$HOME/.cinnamon/configs/grouped-window-list@cinnamon.org/2.json"
-if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Fichier de configuration non trouvé : $CONFIG_FILE"
-    exit 1
-fi
-cp "$CONFIG_FILE" "$CONFIG_FILE.backup"
-if command -v jq &> /dev/null; then
-    jq '.["pinned-apps"].value = (.["pinned-apps"].value | map(select(. != "gnome-terminal.desktop")))' "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
-else
-sed -i 's/"gnome-terminal.desktop",\?//g' "$CONFIG_FILE"
-    # Nettoyer les virgules en double ou en fin
-    sed -i 's/,\s*,/,/g' "$CONFIG_FILE"
-    sed -i 's/,\s*\]/]/g' "$CONFIG_FILE"
-fi
-nohup cinnamon --replace &>/dev/null &
+
 
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y

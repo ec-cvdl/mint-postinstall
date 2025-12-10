@@ -7,9 +7,10 @@ sudo apt upgrade -y
 sudo apt autoremove
 
 # Suppression de l'application Terminal de la barre des tâches
-PANEL_LAUNCHERS=$(gsettings get org.cinnamon panel-launchers)
-NEW_LAUNCHERS=$(echo "$PANEL_LAUNCHERS" | sed "s/'gnome-terminal.desktop', //g" | sed "s/, 'gnome-terminal.desktop'//g" | sed "s/'gnome-terminal.desktop'//g")
-gsettings set org.cinnamon panel-launchers "$NEW_LAUNCHERS"
+dconf write /org/cinnamon/panels-enabled "['1:0:bottom']"
+gsettings set org.cinnamon.desktop.default-applications.terminal exec 'gnome-terminal'
+gsettings set org.cinnamon favorite-apps "$(gsettings get org.cinnamon favorite-apps | sed "s/'gnome-terminal.desktop', //g" | sed "s/, 'gnome-terminal.desktop'//g")"
+nohup cinnamon --replace &>/dev/null &
 
 # Désinstallation de Celluloid
 sudo apt remove celluloid -y

@@ -97,7 +97,7 @@ gsettings set org.nemo.desktop trash-icon-visible true
 # Créer les lanceurs personnalisés
 BUREAU="$HOME/Bureau"
 
-# Fonction pour créer un raccourci
+# Fonction pour créer les raccourcis Bureau
 create_launcher() {
     local name=$1
     local exec=$2

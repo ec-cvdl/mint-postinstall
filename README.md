@@ -41,6 +41,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Installe le lecteur média VLC
 - Vérifie la présence du support de Flatpak, et si non, l'installe
 - Installe le logiciel d'assistance RustDesk
+- Lance la Logithèque pendant 30 secondes, pour charger le cache du logiciel
 - Vérifie la présence de Libre Office et si non, l'installe
 - Génère des raccourcis sur le bureau
 - Installe les polices Microsoft pour une meilleure compatibilité avec les documents texte

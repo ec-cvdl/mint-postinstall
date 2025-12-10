@@ -88,7 +88,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak install rustdesk -y
 
 # Ouverture de la Logithèque pour charger le cache
-mintinstall & sleep 30 && pkill -f mintinstall
+mintinstall & sleep 35 && pkill -f mintinstall
 
 # Ajout des raccourcis sur le Bureau
 gsettings set org.nemo.desktop home-icon-visible true
@@ -147,7 +147,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y ubuntu-restricted-extras
 # Réaffichage du message de bienvenue de Linux Mint
 sudo rm -rf /home/utilisateur/.linuxmint
 sudo rm -rf /home/user/.linuxmint
-sudo rm -rf /home/admin/.linuxmint
 
 # Ouverture de Firefox pour l'activation du l'activation du dictionnaire
 firefox https://addons.mozilla.org/fr/firefox/addon/dictionnaire-fran%C3%A7ais1/

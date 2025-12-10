@@ -1,5 +1,5 @@
 # mint-postinstall
-Un script dédié à l'installation et le paramétrage des machines sous Linux Mint auprès des reconditionneurs d'Emmaus Connect en Centre Val-de-Loire. Ce script peut être utilisé par d'autres régions, dupliqué, commenté et modifié au besoin.
+Un script dédié à l'installation et le paramétrage des machines sous Linux Mint auprès des reconditionneurs d'Emmaus Connect en Centre Val-de-Loire ou autres territoires. Ce script peut être utilisé par d'autres structures, dupliqué, commenté et modifié au besoin.
 
 ## Pré-requis lors de l'installation de Linux Mint 22.2 (Zara) :
 1. Téléchargez la dernière version officielle de Linux Mint 22.2 (Zara) via [ce lien](https://www.linuxmint.com/edition.php?id=322)

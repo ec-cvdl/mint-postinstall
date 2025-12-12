@@ -16,7 +16,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
    - Désépinglez le terminal de la barre des tâches (automatisé dans une future mise à jour)
    - Suivez l'une des méthodes d'installation ci-dessous
 
-### Première méthode pour l'installation :
+### Première méthode pour l'installation (mode graphique) :
 1. Téléchargez le script via [ce lien](https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/mintpostinstall.sh) (Clic droit sur le lien, puis "Enregistrer le cible du lien sous"), ou vous pouvez directement télécharger le fichier sur [cette page](https://github.com/ec-cvdl/mint-postinstall/blob/main/mintpostinstall.sh), en cliquant sur l'icône de téléchargement.
 2. Ouvrez le dossier du script (en général, dans le dossier "Téléchargements"
 3. Faites un clic droit sur le script, puis sur "Propriétés"
@@ -24,7 +24,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 5. Double cliquez sur le script, puis sélectionnez l'option "Lancer dans le Terminal"
 6. Entrez le mot de passe saisi lors de l'installation (généralement "emmaus")
 
-### En cours de modification
+### En cours de modification (mode Terminal)
 ~~Seconde méthode (en ligne de commande) :~~
 ~~1. Ouvrez l'application "Terminal" sur l'ordinateur
 2. Télécharger le fichier d'installation depuis Github

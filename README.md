@@ -12,6 +12,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
    - Sélectionnez l'option "Effacer le disque et installer Linux Mint" (l'intégralité du disque dur doit être dédiée à Linux Mint, afin d'éviter un dual-boot ou l'apparition du boot menu au démarrage de l'ordinateur)
    - Sélectionnez la zone géographique : "Paris"
    - Entrez les informations du compte : Le nom -> "Utilisateur" ; Mot de passe : "emmaus"
+   - Vous pouvez laisser le mot de passe requis au démarrage, donc par défaut lors du lancement.
    - Une fois le système installé, et l'ordinateur redémarré une première fois, fermez la fenêtre de premier lancement de Linux Mint, **sans décocher la case "Afficher cette fenêtre au démarrage" (Important).** Il en va de même, si jamais vous lancez le Gestionnaire de mise à jour, **de ne pas cliquer sur "Valider" lors du premier lancement, afin de laisser un premier niveau d'informations à nos bénéficaires lors de la prise en main du matériel.**
    - Désépinglez le terminal de la barre des tâches (automatisé dans une future mise à jour)
    - Suivez l'une des méthodes d'installation ci-dessous

@@ -82,7 +82,7 @@ sudo apt purge celluloid -y
 sudo apt install vlc -y
 
 # Installation d'Okular
-sudo apt install okular
+sudo apt install okular -y
 xdg-mime default okular.desktop application/pdf
 xdg-mime query default application/pdf
 

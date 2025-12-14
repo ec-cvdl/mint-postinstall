@@ -81,6 +81,11 @@ sudo apt purge celluloid -y
 #Installation de VLC Media Player
 sudo apt install vlc -y
 
+# Installation d'Okular
+sudo apt install okular
+xdg-mime default okular.desktop application/pdf
+xdg-mime query default application/pdf
+
 # Vérification du support de Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 

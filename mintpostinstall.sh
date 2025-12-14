@@ -120,6 +120,7 @@ create_launcher "VLC" "vlc" "vlc"
 create_launcher "Firefox" "firefox" "firefox"
 create_launcher "Logithèque" "mintinstall" "mintinstall"
 create_launcher "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
+create_launcher "Lecteur de documents PDF" "okular" "okular"
 
 # Rendre les raccourcis exécutables
 chmod +x ~/Bureau/*.desktop

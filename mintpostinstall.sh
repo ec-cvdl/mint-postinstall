@@ -82,9 +82,9 @@ sudo apt purge celluloid -y
 sudo apt install vlc -y
 
 # Installation d'Okular
-sudo apt install okular -y
-xdg-mime default okular.desktop application/pdf
-xdg-mime query default application/pdf
+# sudo apt install okular -y
+# xdg-mime default okular.desktop application/pdf
+# xdg-mime query default application/pdf
 
 # Vérification du support de Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -125,7 +125,7 @@ create_launcher "VLC" "vlc" "vlc"
 create_launcher "Firefox" "firefox" "firefox"
 create_launcher "Logithèque" "mintinstall" "mintinstall"
 create_launcher "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
-create_launcher "Lecteur de documents PDF" "okular" "okular"
+create_launcher "Lecteur de documents PDF" "xreader" "xreader"
 
 # Rendre les raccourcis exécutables
 chmod +x ~/Bureau/*.desktop

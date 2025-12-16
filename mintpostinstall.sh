@@ -96,7 +96,7 @@ sudo apt install cheese -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Installation de RustDesk via Flatpak
-flatpak install rustdesk -y
+flatpak install -y --noninteractive flathub com.rustdesk.RustDesk
 
 # Ouverture de la Logithèque pour charger le cache
 mintinstall & sleep 35 && pkill -f mintinstall

@@ -17,19 +17,19 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
    - Désépinglez le terminal de la barre des tâches (automatisé dans une future mise à jour)
    - Suivez l'une des méthodes d'installation ci-dessous
 
-### Première méthode pour l'installation (mode graphique) :
+### Première méthode pour l'installation (mode Terminal et lien raccourci) :
+1. Ouvrez l'application "Terminal" sur l'ordinateur
+2. Tapez la commande suivante :
+  `https://is.gd/minteccvdl`
+3. Tapez le mot de passe Administrateur ("emmaus") et laissez le script s'exécuter
+
+### Seconde méthode (mode graphique) :
 1. Téléchargez le script via [ce lien](https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/mintpostinstall.sh) (Clic droit sur le lien, puis "Enregistrer le cible du lien sous"), ou vous pouvez directement télécharger le fichier sur [cette page](https://github.com/ec-cvdl/mint-postinstall/blob/main/mintpostinstall.sh), en cliquant sur l'icône de téléchargement.
 2. Ouvrez le dossier du script (en général, dans le dossier "Téléchargements"
 3. Faites un clic droit sur le script, puis sur "Propriétés"
 4. Dans l'onglet "Permissions", cochez l'option "Autoriser l'exécution du fichier comme un programme"
 5. Double cliquez sur le script, puis sélectionnez l'option "Lancer dans le Terminal"
 6. Entrez le mot de passe saisi lors de l'installation (généralement "emmaus")
-
-### Seconde méthode (mode Terminal et lien raccourci)
-1. Ouvrez l'application "Terminal" sur l'ordinateur
-2. Tapez la commande suivante :
-  `https://is.gd/minteccvdl`
-3. Tapez le mot de passe Administrateur ("emmaus") et laissez le script s'exécuter
 
 ### Ce que fait le script, dans l'ordre d'exécution :
 - Mets à jour la machine avec les derniers paquets système

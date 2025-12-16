@@ -129,6 +129,7 @@ create_launcher "Firefox" "firefox" "firefox"
 create_launcher "Logithèque" "mintinstall" "mintinstall"
 create_launcher "Gestionnaire de mise à jour" "mintupdate" "software-update-available"
 create_launcher "Lecteur de documents PDF" "xreader" "xreader"
+create_launcher "Message d'accueil et aide" "mintwelecome" "mintwelcome"
 
 # Rendre les raccourcis exécutables
 chmod +x ~/Bureau/*.desktop

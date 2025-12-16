@@ -25,15 +25,11 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 5. Double cliquez sur le script, puis sélectionnez l'option "Lancer dans le Terminal"
 6. Entrez le mot de passe saisi lors de l'installation (généralement "emmaus")
 
-### En cours de modification (mode Terminal)
-~~Seconde méthode (en ligne de commande) :~~
-~~1. Ouvrez l'application "Terminal" sur l'ordinateur
-2. Télécharger le fichier d'installation depuis Github
-  `wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/mintpostinstall.sh`
-3. Rendez le script exécutable avec les droits adminstrateur avec
-   `sudo chmod +x mintpostinstall.sh`
-4. Exécutez le script avec la commande :
-  `sudo ./mintpostinstall.sh`~~
+### Seconde méthode (mode Terminal et lien raccourci)
+1. Ouvrez l'application "Terminal" sur l'ordinateur
+2. Tapez la commande suivante :
+  `https://is.gd/minteccvdl`
+3. Tapez le mot de passe Administrateur ("emmaus") et laissez le script s'exécuter
 
 ### Ce que fait le script, dans l'ordre d'exécution :
 - Mets à jour la machine avec les derniers paquets système

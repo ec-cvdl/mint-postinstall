@@ -1,3 +1,6 @@
+# Déplacement dans le dossier Téléchargements
+cd /home/user/Téléchargements 2>/dev/null || cd /home/utilisateur/Téléchargements
+
 # Fermeture de Mint-Update
 pkill mintUpdate
 

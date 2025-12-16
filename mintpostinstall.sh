@@ -78,8 +78,11 @@ fi
 sudo apt remove celluloid -y
 sudo apt purge celluloid -y
 
-#Installation de VLC Media Player
+# Installation de VLC Media Player
 sudo apt install vlc -y
+
+# Installation de Cheese (Webcam)
+sudo apt install cheese -y
 
 # Installation d'Okular
 # sudo apt install okular -y

@@ -20,7 +20,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 ### Première méthode pour l'installation (mode Terminal et lien raccourci) :
 1. Ouvrez l'application "Terminal" sur l'ordinateur
 2. Tapez la commande suivante :
-  `https://is.gd/minteccvdl`
+  `curl -sL https://is.gd/minteccvdl | bash`
 3. Tapez le mot de passe Administrateur ("emmaus") et laissez le script s'exécuter
 
 ### Seconde méthode (mode graphique) :

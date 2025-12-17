@@ -36,6 +36,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 - Supprime les paquets après installation
 - Désinstalle le lecteur média Celluloid
 - Installe le lecteur média VLC
+- Installe le logiciel Cheese pour la webcam
 - Vérifie la présence du support de Flatpak, et si non, l'installe
 - Installe le logiciel d'assistance RustDesk
 - Lance la Logithèque pendant 30 secondes, pour charger le cache du logiciel

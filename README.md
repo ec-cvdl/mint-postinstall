@@ -34,17 +34,18 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 ### Ce que fait le script, dans l'ordre d'exécution :
 - Mets à jour la machine avec les derniers paquets système
 - Supprime les paquets après installation
+- Supprime le Terminal de la barre des tâches
 - Désinstalle le lecteur média Celluloid
 - Installe le lecteur média VLC
 - Installe le logiciel Cheese pour la webcam
 - Vérifie la présence du support de Flatpak, et si non, l'installe
 - Installe le logiciel d'assistance RustDesk
-- Lance la Logithèque pendant 30 secondes, pour charger le cache du logiciel
+- Lance la Logithèque pendant 35 secondes, pour charger le cache du logiciel
 - Vérifie la présence de Libre Office et si non, l'installe
 - Génère des raccourcis sur le bureau
 - Installe les polices Microsoft pour une meilleure compatibilité avec les documents texte
 - Installe des codecs vidéo
-- Installe le dictionnaire orthographique Français sous Firefox et l'active (action manuelle)
+- Installe le dictionnaire orthographique Français sous Firefox (activation manuelle à la fin du script)
 - Supprime l'historique, ainsi que le cache de Firefox
 ~~- Supprimer les mots de passe WiFi enregistrés~~
 - Supprime le script en lui-même une fois la fenêtre de Firefox fermée

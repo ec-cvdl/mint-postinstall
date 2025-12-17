@@ -29,7 +29,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 3. Faites un clic droit sur le script, puis sur "Propriétés"
 4. Dans l'onglet "Permissions", cochez l'option "Autoriser l'exécution du fichier comme un programme"
 5. Double cliquez sur le script, puis sélectionnez l'option "Lancer dans le Terminal"
-6. Entrez le mot de passe saisi lors de l'installation (généralement "emmaus")
+6. Entrez le mot de passe saisi lors de l'installation ("emmaus")
 
 ### Ce que fait le script, dans l'ordre d'exécution :
 - Mets à jour la machine avec les derniers paquets système

@@ -131,6 +131,7 @@ EOF
 # Créer les lanceurs
 create_launcher "LibreOffice Writer" "libreoffice --writer" "libreoffice-writer"
 create_launcher "LibreOffice Calc" "libreoffice --calc" "libreoffice-calc"
+create_laucher "LibreOffice Impress" "libreoffice --impress" "libreoffice-impress"
 create_launcher "VLC" "vlc" "vlc"
 create_launcher "Firefox" "firefox" "firefox"
 create_launcher "Logithèque" "mintinstall" "mintinstall"

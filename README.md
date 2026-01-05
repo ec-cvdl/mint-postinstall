@@ -24,7 +24,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
   ```bash
 curl -sL is.gd/minteccvdl | bash
 ```
-4. Tapez le mot de passe Administrateur ("emmaus") et laissez le script s'exécuter
+3. Tapez le mot de passe Administrateur ("emmaus") et laissez le script s'exécuter
 
 ### Seconde méthode (mode graphique) :
 1. Téléchargez le script via [ce lien](https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/mintpostinstall.sh) (Clic droit sur le lien, puis "Enregistrer le cible du lien sous"), ou vous pouvez directement télécharger le fichier sur [cette page](https://github.com/ec-cvdl/mint-postinstall/blob/main/mintpostinstall.sh), en cliquant sur l'icône de téléchargement.

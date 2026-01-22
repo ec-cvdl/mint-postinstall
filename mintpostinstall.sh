@@ -157,6 +157,9 @@ firefox --headless &
 sleep 5
 pkill -f firefox
 
+# Téléchargement du livret d'accompagnement livret en PDF, puis déplacement sur le Bureau et dans le dossier Documents
+
+
 # Installation de polices Microsoft et codecs vidéo
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive apt install -y ubuntu-restricted-extras

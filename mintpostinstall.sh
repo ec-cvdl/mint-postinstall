@@ -155,8 +155,8 @@ gsettings set org.cinnamon.theme name "Mint-Y"
 gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y"
 
 # Changement de la souris
-gsettings set org.cinnamon.desktop.interface cursor-theme "DMZ-White"
-gsettings set org.cinnamon.desktop.interface cursor-size 28
+gsettings set org.cinnamon.desktop.interface cursor-theme "XCursor-Pro Light"
+gsettings set org.cinnamon.desktop.interface cursor-size 42
 
 # Création du dossier .mozzila dans le dossier personnel
 firefox & sleep 3 && pkill -f firefox

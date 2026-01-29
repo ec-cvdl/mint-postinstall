@@ -148,6 +148,11 @@ nemo -q
 # Changement du fond d'écran
 gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-wallpapers/jvasek_xmas_bokeh.jpg"
 
+# Application du thème Clair
+gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y"
+gsettings set org.cinnamon.theme name "Mint-Y"
+gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y"
+
 # Création du dossier .mozzila dans le dossier personnel
 firefox & sleep 3 && pkill -f firefox
 

@@ -151,7 +151,7 @@ gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/bac
 # Application du thème Clair
 gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Aqua"
 gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Aqua"
-gsettings set org.cinnamon.theme name "Mint-Y"
+gsettings set org.cinnamon.theme name "Mint-Y- Aqua"
 gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Aqua"
 
 # Création du dossier .mozzila dans le dossier personnel

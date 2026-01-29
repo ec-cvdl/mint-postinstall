@@ -158,7 +158,7 @@ sleep 5
 pkill -f firefox
 
 # Téléchargement du livret d'accompagnement livret en PDF, puis déplacement sur le Bureau et dans le dossier Documents
-
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/aide.pdf
 
 # Installation de polices Microsoft et codecs vidéo
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
@@ -169,7 +169,8 @@ sudo rm -rf /home/utilisateur/.linuxmint
 sudo rm -rf /home/user/.linuxmint
 
 # Ouverture de Firefox pour l'activation du l'activation du dictionnaire
-firefox https://addons.mozilla.org/fr/firefox/addon/dictionnaire-fran%C3%A7ais1/
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/aide.pdf
+mv aide.pdf ~/Desktop/aide.pdf
 
 # Supression de l'historique et du cache de Firefox
 rm -rf ~/.mozilla/firefox/*.default-release/places.sqlite

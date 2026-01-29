@@ -191,6 +191,10 @@ rm -rf ~/.mozilla/firefox/*.default-release/places.sqlite
 rm -rf ~/.mozilla/firefox/*.default-release/cookies.sqlite
 rm -rf ~/.mozilla/firefox/*.default-release/cache2/
 
+# Supression des fichiers contenus dans le dossier Téléchargements
+sudo rm -rf ~/Téléchargements/*
+sudo rm -rf ~/Downloads/*
+
 # Suppression de tous les mots de passe Wi-Fi enregistrés (dans une future mise à jour)
 
 # Suppression du script

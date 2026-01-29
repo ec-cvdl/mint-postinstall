@@ -149,13 +149,13 @@ nemo -q
 gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-wallpapers/jvasek_xmas_bokeh.jpg"
 
 # Application du thème Clair
-gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Red"
-gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Yellow"
+gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y"
+gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Sand"
 gsettings set org.cinnamon.theme name "Mint-Y"
-gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y"
+gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Aqua"
 
 # Changement de la souris
-gsettings set org.cinnamon.desktop.interface cursor-theme "XCursor-Pro Light"
+gsettings set org.cinnamon.desktop.interface cursor-theme "XCursor-Pro-Light"
 gsettings set org.cinnamon.desktop.interface cursor-size 42
 
 # Création du dossier .mozzila dans le dossier personnel

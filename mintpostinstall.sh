@@ -156,7 +156,7 @@ gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Aqua"
 
 # Changement de la souris
 gsettings set org.cinnamon.desktop.interface cursor-theme "XCursor-Pro-Light"
-gsettings set org.cinnamon.desktop.interface cursor-size 42
+gsettings set org.cinnamon.desktop.interface cursor-size 30
 
 # Création du dossier .mozzila dans le dossier personnel
 firefox & sleep 3 && pkill -f firefox

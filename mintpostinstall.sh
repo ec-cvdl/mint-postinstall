@@ -149,8 +149,8 @@ nemo -q
 gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-wallpapers/jvasek_xmas_bokeh.jpg"
 
 # Application du thème Clair
-gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y"
-gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y"
+gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Yellow"
+gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Yellow"
 gsettings set org.cinnamon.theme name "Mint-Y"
 gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y"
 

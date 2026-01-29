@@ -145,6 +145,9 @@ chmod +x ~/Bureau/*.desktop
 # Redémarrage de l'explorateur
 nemo -q
 
+# Changement du fond d'écran
+gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-wallpapers/jvasek_xmas_bokeh.jpg"
+
 # Création du dossier .mozzila dans le dossier personnel
 firefox & sleep 3 && pkill -f firefox
 
@@ -159,6 +162,8 @@ pkill -f firefox
 
 # Téléchargement du livret d'accompagnement livret en PDF, puis déplacement sur le Bureau et dans le dossier Documents
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/aide.pdf
+cp ~/Documents/aide.pdf
+mv ~/Desktop/aide.pdf
 
 # Installation de polices Microsoft et codecs vidéo
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
@@ -169,8 +174,7 @@ sudo rm -rf /home/utilisateur/.linuxmint
 sudo rm -rf /home/user/.linuxmint
 
 # Ouverture de Firefox pour l'activation du l'activation du dictionnaire
-wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/aide.pdf
-mv aide.pdf ~/Desktop/aide.pdf
+firefox https://addons.mozilla.org/fr/firefox/addon/dictionnaire-fran%C3%A7ais1/
 
 # Supression de l'historique et du cache de Firefox
 rm -rf ~/.mozilla/firefox/*.default-release/places.sqlite

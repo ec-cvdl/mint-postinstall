@@ -19,7 +19,7 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
    - Suivez l'une des méthodes d'installation ci-dessous
 
 ### Première méthode pour l'installation (mode Terminal et lien raccourci) :
-1. Ouvrez l'application "Terminal" sur l'ordinateur
+1. Ouvrez l'application "Terminal" sur l'ordinateur récemment installé
 2. Tapez la commande suivante :
   ```bash
 curl -sL is.gd/minteccvdl | bash

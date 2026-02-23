@@ -145,7 +145,7 @@ chmod +x ~/Bureau/*.desktop
 # Redémarrage de l'explorateur
 nemo -q
 
-# Baisser le micro à 50% pour éviter la saturation
+# Baisser le micro à 45% pour éviter la saturation
 #!/bin/bash
 
 # Essayer avec ALSA
@@ -155,14 +155,14 @@ CONTROLES=$(amixer -c $CARTE_SON controls | grep -E "Capture|Mic" | awk '{print 
 if [ -n "$CONTROLES" ]; then
     for CTRL in $CONTROLES; do
         echo "Réglage ALSA : $CTRL"
-        amixer -c $CARTE_SON set "$CTRL" 50% >/dev/null
+        amixer -c $CARTE_SON set "$CTRL" 45% >/dev/null
     done
 else
     # Essayer avec PulseAudio
     MIC_INDEX=$(pactl list short sources | grep input | awk '{print $1}')
     if [ -n "$MIC_INDEX" ]; then
         echo "Réglage PulseAudio : $MIC_INDEX"
-        pactl set-source-volume $MIC_INDEX 50%
+        pactl set-source-volume $MIC_INDEX 45%
     else
         echo "Aucun micro trouvé."
         exit 1

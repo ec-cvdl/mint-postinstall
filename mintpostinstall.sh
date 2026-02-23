@@ -168,7 +168,7 @@ else
         exit 1
     fi
 fi
-
+sudo alsactl store
 
 # Changement du fond d'écran
 gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-wallpapers/jvasek_xmas_bokeh.jpg"

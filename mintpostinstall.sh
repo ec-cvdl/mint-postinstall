@@ -145,6 +145,31 @@ chmod +x ~/Bureau/*.desktop
 # Redémarrage de l'explorateur
 nemo -q
 
+# Baisser le micro à 50% pour éviter la saturation
+#!/bin/bash
+
+# Essayer avec ALSA
+CARTE_SON=$(aplay -l | grep "card [0-9]" | head -n 1 | awk '{print $2}' | cut -d: -f1)
+CONTROLES=$(amixer -c $CARTE_SON controls | grep -E "Capture|Mic" | awk '{print $2}' | tr '\n' ' ')
+
+if [ -n "$CONTROLES" ]; then
+    for CTRL in $CONTROLES; do
+        echo "Réglage ALSA : $CTRL"
+        amixer -c $CARTE_SON set "$CTRL" 50% >/dev/null
+    done
+else
+    # Essayer avec PulseAudio
+    MIC_INDEX=$(pactl list short sources | grep input | awk '{print $1}')
+    if [ -n "$MIC_INDEX" ]; then
+        echo "Réglage PulseAudio : $MIC_INDEX"
+        pactl set-source-volume $MIC_INDEX 50%
+    else
+        echo "Aucun micro trouvé."
+        exit 1
+    fi
+fi
+
+
 # Changement du fond d'écran
 gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-wallpapers/jvasek_xmas_bokeh.jpg"
 

@@ -3,8 +3,8 @@ Un script dédié à l'installation et le paramétrage des machines sous Linux M
 
 ![Capture d'écran du Bureau de Linux Mint un fois le script exécuté](https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/refs/heads/main/screenshot_mint_postinstall.png "Capture d'écran du Bureau de Linux Mint un fois le script exécuté")
 
-## Pré-requis lors de l'installation de Linux Mint 22.2 (Zara) :
-1. Téléchargez la dernière version officielle de Linux Mint 22.2 (Zara) via [ce lien](https://www.linuxmint.com/edition.php?id=322)
+## Pré-requis lors de l'installation de Linux Mint 22.3 (Zena) :
+1. Téléchargez la dernière version officielle de Linux Mint 22.3 (Zena) via [ce lien](https://www.linuxmint.com/edition.php?id=326)
 2. Lors de l'installation, suivez les étapes suivantes :
    - Lancez "Install Linux Mint"
    - Sélectionnez la langue : "Français"

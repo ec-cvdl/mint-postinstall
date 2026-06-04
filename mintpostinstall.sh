@@ -308,10 +308,24 @@ firefox --headless &
 sleep 5
 pkill -f firefox
 
-# Téléchargement du livret d'accompagnement livret en PDF, puis déplacement sur le Bureau et dans le dossier Documents
+# Téléchargement des documents d'accompagnement en PDF, puis déplacement dans le dossier Documents
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/aide.pdf
 cp aide.pdf ~/Documents/aide.pdf
-cp aide.pdf ~/Desktop/aide.pdf
+
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/Conseils.pdf
+cp aide.pdf ~/Documents/Conseils.pdf
+
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/ControlParental.pdf
+cp aide.pdf ~/Documents/ControlParental.pdf
+
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/FinDeVieMateriel.pdf
+cp aide.pdf ~/Documents/FinDeVieMateriel.pdf
+
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/GuideLinux.pdf
+cp aide.pdf ~/Documents/GuideLinux.pdf
+
+wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/MonPCLinux.pdf
+cp aide.pdf ~/Documents/MonPCLinux.pdf
 
 # Installation de polices Microsoft et codecs vidéo
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections

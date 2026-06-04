@@ -90,7 +90,7 @@ sudo apt install vlc -y
 # Installation de Cheese (Webcam)
 sudo apt install cheese -y
 
-# Installation d'Okular
+# Installation d'Okular (désactivé)
 # sudo apt install okular -y
 # xdg-mime default okular.desktop application/pdf
 # xdg-mime query default application/pdf
@@ -182,6 +182,116 @@ gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Aqua"
 # Changement de la souris
 gsettings set org.cinnamon.desktop.interface cursor-theme "XCursor-Pro-Light"
 gsettings set org.cinnamon.desktop.interface cursor-size 30
+
+# Modification de l'interface de LibreOffice
+#!/bin/bash
+
+XCU="$HOME/.config/libreoffice/4/user/registrymodifications.xcu"
+
+# Ferme toute instance LibreOffice ouverte
+pkill -x soffice 2>/dev/null
+sleep 1
+
+# Si le fichier XCU n'existe pas encore, lance LibreOffice en headless
+# pour initialiser le profil utilisateur, puis le ferme
+if [ ! -f "$XCU" ]; then
+    echo "Profil LibreOffice absent, initialisation..."
+    soffice --headless --norestore --nologo &
+    LO_PID=$!
+
+    # Attend que le fichier XCU apparaisse (max 30s)
+    TIMEOUT=30
+    ELAPSED=0
+    while [ ! -f "$XCU" ] && [ $ELAPSED -lt $TIMEOUT ]; do
+        sleep 1
+        ELAPSED=$((ELAPSED + 1))
+    done
+
+    kill $LO_PID 2>/dev/null
+    pkill -x soffice 2>/dev/null
+    sleep 2
+
+    if [ ! -f "$XCU" ]; then
+        echo "Erreur : impossible de créer le profil LibreOffice."
+        exit 1
+    fi
+    echo "Profil initialisé."
+fi
+
+# Patch du fichier XCU
+python3 - <<'EOF'
+import xml.etree.ElementTree as ET
+import os, sys
+
+xcu_path = os.path.expanduser("~/.config/libreoffice/4/user/registrymodifications.xcu")
+
+ET.register_namespace('oor', 'http://openoffice.org/2001/registry')
+ET.register_namespace('xs',  'http://www.w3.org/2001/XMLSchema')
+ET.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+
+tree = ET.parse(xcu_path)
+root = tree.getroot()
+
+NS = 'http://openoffice.org/2001/registry'
+
+entries = [
+    {
+        'path': '/org.openoffice.Office.Common/Misc',
+        'prop': 'SymbolStyle',
+        'value': 'colibre'
+    },
+    {
+        'path': '/org.openoffice.Office.Writer/Layout/Other',
+        'prop': 'ActiveToolbar',
+        'value': 'notebookbar_tabbed.ui'
+    },
+    {
+        'path': '/org.openoffice.Office.Calc/Layout/Other',
+        'prop': 'ActiveToolbar',
+        'value': 'notebookbar_tabbed.ui'
+    },
+    {
+        'path': '/org.openoffice.Office.Impress/Layout/Other',
+        'prop': 'ActiveToolbar',
+        'value': 'notebookbar_tabbed.ui'
+    },
+    {
+        'path': '/org.openoffice.Office.Draw/Layout/Other',
+        'prop': 'ActiveToolbar',
+        'value': 'notebookbar_tabbed.ui'
+    },
+]
+
+for entry in entries:
+    path  = entry['path']
+    pname = entry['prop']
+    val   = entry['value']
+
+    found = False
+    for item in root.findall(f'{{{NS}}}item'):
+        if item.get(f'{{{NS}}}path') == path:
+            for prop in item.findall(f'{{{NS}}}prop'):
+                if prop.get(f'{{{NS}}}name') == pname:
+                    prop.find(f'{{{NS}}}value').text = val
+                    found = True
+                    print(f"[MàJ] {path} / {pname} = {val}")
+                    break
+        if found:
+            break
+
+    if not found:
+        item = ET.SubElement(root, f'{{{NS}}}item')
+        item.set(f'{{{NS}}}path', path)
+        prop = ET.SubElement(item, f'{{{NS}}}prop')
+        prop.set(f'{{{NS}}}name', pname)
+        prop.set(f'{{{NS}}}op', 'fuse')
+        value = ET.SubElement(prop, f'{{{NS}}}value')
+        value.text = val
+        print(f"[Ajout] {path} / {pname} = {val}")
+
+tree.write(xcu_path, encoding='UTF-8', xml_declaration=True)
+print("Configuration LibreOffice appliquée.")
+EOF
 
 # Création du dossier .mozzila dans le dossier personnel
 firefox & sleep 3 && pkill -f firefox

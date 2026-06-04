@@ -313,19 +313,19 @@ wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/aide.pdf
 cp aide.pdf ~/Documents/aide.pdf
 
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/Conseils.pdf
-cp aide.pdf ~/Documents/Conseils.pdf
+cp Conseils.pdf ~/Documents/Conseils.pdf
 
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/ControlParental.pdf
-cp aide.pdf ~/Documents/ControlParental.pdf
+cp ControlParental.pdf ~/Documents/ControlParental.pdf
 
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/FinDeVieMateriel.pdf
-cp aide.pdf ~/Documents/FinDeVieMateriel.pdf
+cp FinDeVieMateriel.pdf ~/Documents/FinDeVieMateriel.pdf
 
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/GuideLinux.pdf
-cp aide.pdf ~/Documents/GuideLinux.pdf
+cp GuideLinux.pdf ~/Documents/GuideLinux.pdf
 
 wget https://raw.githubusercontent.com/ec-cvdl/mint-postinstall/main/MonPCLinux.pdf
-cp aide.pdf ~/Documents/MonPCLinux.pdf
+cp MonPCLinux.pdf ~/Documents/MonPCLinux.pdf
 
 # Installation de polices Microsoft et codecs vidéo
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections

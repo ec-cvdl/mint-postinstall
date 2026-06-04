@@ -12,6 +12,9 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove
 
+# Ajout de MintUpgrade pour les futures mise à jour de version
+sudo apt install mintupgrade -y
+
 # Suppression de l'application Terminal de la barre des tâches
 #!/bin/bash
 
